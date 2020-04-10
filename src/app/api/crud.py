@@ -26,3 +26,8 @@ async def put(id: int, payload: NoteSchema):
         .returning(notes.c.id)
     )
     return await database.execute(query=query)
+
+
+async def delete(id: int):
+    query = notes.delete().where(id == notes.c.id)
+    return await database.execute(query=query)
