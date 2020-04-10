@@ -4,5 +4,5 @@ app = FastAPI()
 
 
 @app.get('/ping')
-def pong():
+async def pong():
     return {'ping': 'pong'}
